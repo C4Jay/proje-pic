@@ -22,13 +22,13 @@
           solo
           name="input-7-4"
           label="Description"
-          v-model="tik.decription"
+          v-model="tik.img"
         ></v-textarea>
             </div>
           </div>
         </div><br />
         <div class="form-group">
-          <v-btn color="yellow"> Ticket</v-btn>
+          <v-btn color="yellow" v-on:click.prevent="addTicket"> Ticket</v-btn>
         </div>
     </form>
   </div>
@@ -42,7 +42,7 @@ export default {
     },
     methods: {
        addTicket() {
-            let uri = 'http://localhost:4000/tiks/new';
+            let uri = 'http://localhost:4000/tiks1/new';
             this.axios.post(uri, this.tik).then((response) => {
               console.log(response);
             });
